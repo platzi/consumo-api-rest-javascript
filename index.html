@@ -9,6 +9,8 @@
 <body>
   <h1>Michis App</h1>
 
+  <span id="error"></span>
+
   <section id="randomMichis">
     <h2>Michis aleatorios</h2>
 
@@ -21,14 +23,9 @@
       <img id="img2" width="150" alt="Foto gatito aleatorio">
       <button>Guardar michi en favoritos</button>
     </article>
-
-    <article>
-      <img id="img3" width="150" alt="Foto gatito aleatorio">
-      <button>Guardar michi en favoritos</button>
-    </article>
     
 
-    <button onclick="reload()">Recargar</button>
+    <button onclick="loadRandomMichis()">Recargar</button>
   </section>
   
   <section id="favoritesMichis">
