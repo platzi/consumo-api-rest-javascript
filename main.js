@@ -1,5 +1,5 @@
 const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=2&api_key=c08d415f-dea7-4a38-bb28-7b2188202e46';
-const API_URL_FAVOTITES = 'https://api.thecatapi.com/v1/favourites?limit=2&api_key=c08d415f-dea7-4a38-bb28-7b2188202e46';
+const API_URL_FAVOTITES = 'https://api.thecatapi.com/v1/favourites?api_key=c08d415f-dea7-4a38-bb28-7b2188202e46';
 
 const spanError = document.getElementById('error')
 
@@ -20,7 +20,7 @@ async function loadRandomMichis() {
   }
 }
 
-async function loadFavoritesMichis() {
+async function loadFavouriteMichis() {
   const res = await fetch(API_URL_FAVOTITES);
   const data = await res.json();
   console.log('Favoritos')
@@ -31,5 +31,25 @@ async function loadFavoritesMichis() {
   }
 }
 
+async function saveFavouriteMichis() {
+  const res = await fetch(API_URL_FAVOTITES, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      image_id: 'dje'
+    }),
+  });
+  const data = await res.json();
+
+  console.log('Save')
+  console.log(res)
+
+  if (res.status !== 200) {
+    spanError.innerHTML = "Hubo un error: " + res.status + data.message;
+  }
+}
+
 loadRandomMichis();
-loadFavoritesMichis();
+loadFavouriteMichis();
