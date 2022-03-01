@@ -1,6 +1,6 @@
 console.log('Hello, world')
 
-const API_URL = 'https://api.thecatapi.com/v1/images/search?limit=3';
+const API_URL = 'https://api.thecatapi.com/v1/images/search?limit=3&api_key=c08d415f-dea7-4a38-bb28-7b2188202e46';
 
 async function reload() {
   const res = await fetch(API_URL);
