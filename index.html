@@ -31,6 +31,15 @@
 
     <button onclick="loadRandomMichis()">Recargar</button>
   </section>
+
+  <section id="uploadingMichi">
+    <h2>Sube la foto de tu michi</h2>
+
+    <form id="uploadingForm">
+      <input id="file" type="file" name="file" />
+      <button type="button" onclick="uploadMichiPhoto()">Subit foto de michi</button>
+    </form>
+  </section>
   
   <section id="favoriteMichis">
     <h2>Michis favoritos</h2>
@@ -41,6 +50,7 @@
     </article>
   </section>
 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="./main.js"></script>
 </body>
 </html>
